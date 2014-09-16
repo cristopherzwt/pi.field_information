@@ -46,7 +46,7 @@ class Field_information {
         
         $field_group   = $results->row("field_group");
 	    
-        $results       = $this->EE->db->query("SELECT $information FROM {$this->EE->db->dbprefix}channel_fields WHERE group_id = $field_group");
+        $results       = $this->EE->db->query("SELECT $information FROM {$this->EE->db->dbprefix}channel_fields WHERE group_id = $field_group  and field_name = '$field_name'");
 	    
  		
         if ($results->num_rows() == 0) return false;
